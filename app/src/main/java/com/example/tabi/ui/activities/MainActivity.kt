@@ -1,4 +1,4 @@
-package com.example.tabi
+package com.example.tabi.ui.activities
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.tabi.R
 import com.example.tabi.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
