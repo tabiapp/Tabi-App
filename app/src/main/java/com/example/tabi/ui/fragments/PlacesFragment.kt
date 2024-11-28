@@ -1,4 +1,18 @@
-package com.example.tabi.ui.fragments
+package com.example.tabi.fragments
 
-class PlacesFragment {
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.example.tabi.R
+
+class PlacesFragment : Fragment() {
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_places, container, false)
+    }
 }
