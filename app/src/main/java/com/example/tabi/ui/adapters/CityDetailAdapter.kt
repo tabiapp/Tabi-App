@@ -1,4 +1,4 @@
-package com.example.tabi.adapters
+package com.example.tabi.ui.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

@@ -1,19 +1,18 @@
 package com.example.tabi.ui.adapters
+
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tabi.R
+import com.example.tabi.databinding.ItemCitiesBinding
 import com.example.tabi.model.CityData
-import kotlinx.android.synthetic.main.item_city.view.*
 
-class CityAdapter : RecyclerView.Adapter<CityAdapter.CityViewHolder>() {
+class CityAdapter(private val onCityClick: (CityData) -> Unit) : RecyclerView.Adapter<CityAdapter.CityViewHolder>() {
 
     private var cityList = listOf<CityData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_city, parent, false)
-        return CityViewHolder(view)
+        val binding = ItemCitiesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return CityViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: CityViewHolder, position: Int) {
@@ -28,10 +27,13 @@ class CityAdapter : RecyclerView.Adapter<CityAdapter.CityViewHolder>() {
         notifyDataSetChanged()
     }
 
-    inner class CityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class CityViewHolder(private val binding: ItemCitiesBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(city: CityData) {
-            itemView.city_name.text = city.name
-            itemView.city_image.setImageResource(city.imageResource) // Assuming city has an image resource
+            binding.cityName.text = city.name
+            binding.cityImage.setImageResource(city.iconResId)
+            binding.root.setOnClickListener {
+                onCityClick(city)
+            }
         }
     }
 }
