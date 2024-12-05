@@ -7,19 +7,14 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.tabi.ui.home.HomeFragment"
+        android:name="com.example.tabi.ui.fragments.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.tabi.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_search_city"
+        android:name="com.example.tabi.ui.fragments.SearchCityFragment"
+        android:label="@string/title_search_city"
+        tools:layout="@layout/fragment_search_city" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.tabi.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
 </navigation>
