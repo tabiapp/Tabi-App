@@ -116,136 +116,15 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="8dp" />
 
-    <!-- Grid layout untuk CardView -->
-    <GridLayout
+    <!-- RecyclerView untuk CardView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCities"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:rowCount="2"
-        android:columnCount="2"
         android:layout_marginTop="8dp"
-        android:layout_gravity="center">
-
-        <!-- CardView untuk daftar kota -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            android:layout_margin="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_city_placeholder"
-                    android:contentDescription="@string/city_image"
-                    android:layout_gravity="center" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="City 1"
-                    android:textSize="16sp"
-                    android:layout_marginTop="8dp"
-                    android:gravity="center" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            android:layout_margin="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_city_placeholder"
-                    android:contentDescription="@string/city_image"
-                    android:layout_gravity="center" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="City 2"
-                    android:textSize="16sp"
-                    android:layout_marginTop="8dp"
-                    android:gravity="center" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            android:layout_margin="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_city_placeholder"
-                    android:contentDescription="@string/city_image"
-                    android:layout_gravity="center" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="City 3"
-                    android:textSize="16sp"
-                    android:layout_marginTop="8dp"
-                    android:gravity="center" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            android:layout_margin="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_city_placeholder"
-                    android:contentDescription="@string/city_image"
-                    android:layout_gravity="center" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="City 4"
-                    android:textSize="16sp"
-                    android:layout_marginTop="8dp"
-                    android:gravity="center" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </GridLayout>
+        android:layout_gravity="center"
+        android:padding="8dp"
+        android:clipToPadding="false" />
 </LinearLayout>

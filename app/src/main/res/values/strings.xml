@@ -6,4 +6,7 @@
     <string name="city_image">Icon City</string>
     <string name="search">Find a city\n</string>
     <string name="title_search_city">Search City</string>
+    <string name="tab_manners">Manners</string>
+    <string name="tab_foods">Foods</string>
+    <string name="tab_places">Places</string>
 </resources>

@@ -58,8 +58,8 @@ class SearchCityFragment : Fragment() {
         cityAdapter = CityAdapter { city ->
             navigateToCityDetail(city)
         }
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.adapter = cityAdapter
+        binding.recyclerViewCities.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerViewCities.adapter = cityAdapter
     }
 
     private fun loadCityData() {

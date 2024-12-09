@@ -2,13 +2,13 @@ package com.example.tabi.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tabi.databinding.ItemCitiesBinding
 import com.example.tabi.model.CityData
 
-class CityAdapter(private val onCityClick: (CityData) -> Unit) : RecyclerView.Adapter<CityAdapter.CityViewHolder>() {
-
-    private var cityList = listOf<CityData>()
+class CityAdapter(private val onCityClick: (CityData) -> Unit) : ListAdapter<CityData, CityAdapter.CityViewHolder>(CityDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityViewHolder {
         val binding = ItemCitiesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -16,15 +16,8 @@ class CityAdapter(private val onCityClick: (CityData) -> Unit) : RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: CityViewHolder, position: Int) {
-        val city = cityList[position]
+        val city = getItem(position)
         holder.bind(city)
-    }
-
-    override fun getItemCount() = cityList.size
-
-    fun submitList(list: List<CityData>) {
-        cityList = list
-        notifyDataSetChanged()
     }
 
     inner class CityViewHolder(private val binding: ItemCitiesBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -34,6 +27,16 @@ class CityAdapter(private val onCityClick: (CityData) -> Unit) : RecyclerView.Ad
             binding.root.setOnClickListener {
                 onCityClick(city)
             }
+        }
+    }
+
+    class CityDiffCallback : DiffUtil.ItemCallback<CityData>() {
+        override fun areItemsTheSame(oldItem: CityData, newItem: CityData): Boolean {
+            return oldItem.id == newItem.id // Asumsi `id` adalah identifier unik untuk setiap kota
+        }
+
+        override fun areContentsTheSame(oldItem: CityData, newItem: CityData): Boolean {
+            return oldItem == newItem
         }
     }
 }
