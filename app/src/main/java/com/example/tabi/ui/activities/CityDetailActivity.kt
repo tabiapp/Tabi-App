@@ -68,11 +68,19 @@ class CityDetailActivity : AppCompatActivity() {
             }
         }.attach()
 
+        // Panggil fetchCityData untuk mendapatkan data kota
+        cityViewModel.fetchCityData(cityName)
+        cityViewModel.fetchRegionDetails(cityName)
+
         // Observasi data kota dan pasangkan ke fragmen
-        cityViewModel.cityData.observe(this, Observer { cityData ->
-            (fragments[0] as MannersFragment).setData(cityData.manners)
-            (fragments[1] as FoodsFragment).setData(cityData.foods)
-            (fragments[2] as PlacesFragment).setData(cityData.places)
+        cityViewModel.cityData.observe(this, Observer { cityDataList ->
+            // Jika cityDataList bukan null, kita ambil data pertama
+            val cityData = cityDataList?.firstOrNull()
+            cityData?.let {
+                (fragments[0] as MannersFragment).setData(it.manners)
+                (fragments[1] as FoodsFragment).setData(it.foods)
+                (fragments[2] as PlacesFragment).setData(it.places)
+            }
         })
 
         // Set listener untuk tombol back

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tabi.R
 import com.example.tabi.databinding.FragmentSearchCityBinding
@@ -17,6 +18,7 @@ import com.example.tabi.api.RetrofitInstance
 import com.example.tabi.api.ApiService
 import retrofit2.Call
 import retrofit2.Callback
+import kotlinx.coroutines.launch
 import retrofit2.Response
 
 class SearchCityFragment : Fragment() {
@@ -36,7 +38,7 @@ class SearchCityFragment : Fragment() {
         setupRecyclerView()
 
         // Initialize API service
-        apiService = RetrofitInstance.getClient().create(ApiService::class.java)
+        apiService = RetrofitInstance.apiService
 
         // Preload some city data from API
         loadCityData()
@@ -63,21 +65,21 @@ class SearchCityFragment : Fragment() {
     }
 
     private fun loadCityData() {
-        apiService.getCities().enqueue(object : Callback<List<CityData>> {
-            override fun onResponse(call: Call<List<CityData>>, response: Response<List<CityData>>) {
+        lifecycleScope.launch {
+            try {
+                // Ambil data kota menggunakan ApiService
+                val response: Response<List<CityData>> = apiService.getAllRegions()
                 if (response.isSuccessful && response.body() != null) {
                     cityList.clear()
                     cityList.addAll(response.body()!!)
                     cityAdapter.submitList(cityList)
                 } else {
-                    Toast.makeText(requireContext(), "Failed to load cities", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Failed to load city:", Toast.LENGTH_SHORT).show()
                 }
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
             }
-
-            override fun onFailure(call: Call<List<CityData>>, t: Throwable) {
-                Toast.makeText(requireContext(), "Error: ${t.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
+        }
     }
 
     private fun searchCities(cityName: String) {

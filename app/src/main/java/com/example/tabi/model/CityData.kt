@@ -5,7 +5,7 @@ data class CityData(
     val name: String,
     val iconResId: Int,
     val thumbnailImg: String,
-    val manners: List<String>,
-    val foods: List<String>,
-    val places:List<String>
+    val manners: List<Manner>,
+    val foods: List<Food>,
+    val places:List<Place>
 )

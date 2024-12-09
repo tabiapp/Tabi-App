@@ -13,12 +13,16 @@ interface ApiService {
     @GET("api/regions")
     suspend fun getAllRegions(): Response<List<CityData>>
 
-    @GET("api/{region}/manners")
+    @GET("api/regions/{region}/manners")
     suspend fun getManners(@Path("region") region: String): Response<List<Manner>>
 
-    @GET("api/{region}/foods")
+    @GET("api/regions/{region}/foods")
     suspend fun getFoods(@Path("region") region: String): Response<List<Food>>
 
-    @GET("api/{region}/places")
+    @GET("api/regions/{region}/places")
     suspend fun getPlaces(@Path("region") region: String): Response<List<Place>>
+
+    @GET("api/regions/{region}")
+    suspend fun getRegionDetails(@Path("region") region: String): Response<CityData>
+
 }

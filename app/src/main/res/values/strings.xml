@@ -9,4 +9,6 @@
     <string name="tab_manners">Manners</string>
     <string name="tab_foods">Foods</string>
     <string name="tab_places">Places</string>
+    <string name="splash_screen">Splash Screen</string>
+    <string name="city_detail">Detail City</string>
 </resources>

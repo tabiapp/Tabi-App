@@ -24,4 +24,8 @@ class CityRepository {
     suspend fun getPlaces(region: String): Response<List<Place>> {
         return RetrofitInstance.apiService.getPlaces(region)
     }
+
+    suspend fun getRegionDetails(region: String): Response<CityData> {
+        return RetrofitInstance.apiService.getRegionDetails(region)
+    }
 }
