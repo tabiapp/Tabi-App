@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/biru_bg">
@@ -13,18 +14,14 @@
         android:layout_centerInParent="true">
 
         <!-- Logo Image -->
-        <!-- Ganti dengan drawable logo Anda -->
-        android:layout_gravity="center" />
-
-        <!-- Welcome Text -->
         <ImageView
             android:id="@+id/logoImage"
             android:layout_width="305dp"
             android:layout_height="136dp"
             android:src="@drawable/ic_tabi_logo"
+            android:contentDescription="@string/app_name" />
 
-        <!-- Subtitle Text -->
-
+        <!-- Welcome Text -->
         <TextView
             android:id="@+id/welcomeText"
             android:layout_width="wrap_content"
@@ -37,6 +34,7 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
+        <!-- Subtitle Text -->
         <TextView
             android:id="@+id/subtitleText"
             android:layout_width="wrap_content"
