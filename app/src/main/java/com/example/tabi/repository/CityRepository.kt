@@ -1,6 +1,7 @@
 package com.example.tabi.repository
 
 import com.example.tabi.api.RetrofitInstance
+import com.example.tabi.api.ApiResponse
 import com.example.tabi.model.CityData
 import com.example.tabi.model.Manner
 import com.example.tabi.model.Food
@@ -9,23 +10,28 @@ import retrofit2.Response
 
 class CityRepository {
 
-    suspend fun getAllRegions(regions: String): Response<List<CityData>> {
+    // Mengambil semua region
+    suspend fun getAllRegions(): Response<ApiResponse<List<CityData>>> {
         return RetrofitInstance.apiService.getAllRegions()
     }
 
-    suspend fun getManners(region: String): Response<List<Manner>> {
+    // Mengambil manners berdasarkan region
+    suspend fun getManners(region: String): Response<ApiResponse<List<Manner>>> {
         return RetrofitInstance.apiService.getManners(region)
     }
 
-    suspend fun getFoods(region: String): Response<List<Food>> {
+    // Mengambil foods berdasarkan region
+    suspend fun getFoods(region: String): Response<ApiResponse<List<Food>>> {
         return RetrofitInstance.apiService.getFoods(region)
     }
 
-    suspend fun getPlaces(region: String): Response<List<Place>> {
+    // Mengambil places berdasarkan region
+    suspend fun getPlaces(region: String): Response<ApiResponse<List<Place>>> {
         return RetrofitInstance.apiService.getPlaces(region)
     }
 
-    suspend fun getRegionDetails(region: String): Response<CityData> {
+    // Mengambil detail region
+    suspend fun getRegionDetails(region: String): Response<ApiResponse<CityData>> {
         return RetrofitInstance.apiService.getRegionDetails(region)
     }
 }

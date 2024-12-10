@@ -1,13 +1,11 @@
 package com.example.tabi.ui.activities
 
 import android.os.Bundle
-import android.util.Log
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
+import androidx.fragment.app.Fragment
 import com.example.tabi.R
+import com.example.tabi.ui.fragments.HomeFragment
+import com.example.tabi.ui.fragments.SearchCityFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -16,20 +14,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Hubungkan BottomNavigationView dengan NavController
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav)
+        loadFragment(HomeFragment()) // Set default fragment
 
-        // Mencari NavHostFragment secara aman
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
-
-        if (navHostFragment != null) {
-            // Dapatkan NavController dan hubungkan dengan BottomNavigationView
-            val navController = (navHostFragment as NavHostFragment).navController
-            bottomNavigationView.setupWithNavController(navController)
-        } else {
-            // Tangani kasus di mana NavHostFragment tidak ditemukan
-            Log.e("MainActivity", "NavHostFragment tidak ditemukan!")
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    loadFragment(HomeFragment())
+                    true
+                }
+                R.id.navigation_search_city -> {
+                    loadFragment(SearchCityFragment())
+                    true
+                }
+                else -> false
+            }
         }
     }
 
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
+    }
 }

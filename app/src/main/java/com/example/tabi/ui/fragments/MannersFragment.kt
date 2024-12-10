@@ -12,16 +12,24 @@ import com.example.tabi.model.Manner
 import com.example.tabi.ui.adapters.MannersAdapter
 
 class MannersFragment : Fragment() {
+
     private lateinit var recyclerView: RecyclerView
+    private lateinit var mannersAdapter: MannersAdapter
     private var mannersList: List<Pair<String, String>> = listOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_manners, container, false)
+
+        // Initializing the RecyclerView
         recyclerView = view.findViewById(R.id.recyclerViewManners)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = MannersAdapter(mannersList)
+
+        // Initializing adapter and setting it to RecyclerView
+        mannersAdapter = MannersAdapter(mannersList)
+        recyclerView.adapter = mannersAdapter
+
         return view
     }
 
@@ -39,7 +47,7 @@ class MannersFragment : Fragment() {
         }
 
         mannersList = flattenedList
-        (recyclerView.adapter as MannersAdapter).updateData(mannersList)
+        mannersAdapter.updateData(mannersList)
     }
 
     /**

@@ -39,7 +39,6 @@ android {
 }
 
 dependencies {
-
     // AndroidX Libraries
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -57,19 +56,21 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // RecyclerView
-    implementation ("androidx.recyclerview:recyclerview:1.3.1")
+    implementation("androidx.recyclerview:recyclerview:1.3.1")
 
     // Firebase and Google Libraries (Menggunakan Firebase BOM untuk mengelola versi otomatis)
-    implementation(platform("com.google.firebase:firebase-bom:32.0.0")) // Menggunakan Firebase BOM
-
+    implementation(platform("com.google.firebase:firebase-bom:32.0.0")) // Firebase BOM
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
-    // Image Loading
+    // Image Loading Libraries
     implementation("com.squareup.picasso:picasso:2.8")
-    implementation("com.github.bumptech.glide:glide:4.13.0")
-    annotationProcessor("com.github.bumptech.glide:compiler:4.13.0")
+    implementation("com.github.bumptech.glide:glide:4.15.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.15.0")
 
+    // Material Components for Tabs and ViewPager
+    implementation("com.google.android.material:material:1.8.0")
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
 }

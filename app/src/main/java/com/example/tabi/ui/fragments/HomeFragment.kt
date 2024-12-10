@@ -48,11 +48,14 @@ class HomeFragment : Fragment() {
 
         // Set up ViewModel and fetch city data
         cityViewModel = ViewModelProvider(this).get(CityViewModel::class.java)
-        cityViewModel.fetchCityData("Jakarta,Bali,Yogyakarta,Surabaya")
+        cityViewModel.fetchCityData()
+        Log.d("City Data", cityViewModel.toString())// Update adapter with city data
+
+
         cityViewModel.cityData.observe(viewLifecycleOwner, Observer { cities ->
             cities?.let {
                 cityList = it.take(4) // Take max of 4 cities
-                cityAdapter.submitList(cityList) // Update adapter with city data
+                cityAdapter.submitList(cityList)
             } ?: run {
                 Toast.makeText(requireContext(), "Data kota tidak tersedia", Toast.LENGTH_SHORT).show()
             }
