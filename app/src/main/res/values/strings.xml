@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Tabi</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_city">Search City</string>
+
+    <string name="tab_text_1">Home</string>
+    <string name="tab_text_2">Profile</string>
+    <string name="tab_text_3">Setting</string>
+    <string name="content_tab_manner">Manners</string>
+    <string name="content_tab_food">Foods</string>
+    <string name="content_tab_place">Places</string>
+    <string name="content_tab_text">This is Tab %1$d</string>
+    <string name="search">Search city</string>
+</resources>

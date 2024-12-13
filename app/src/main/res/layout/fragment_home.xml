@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/biru_bg"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <!-- Logo di pojok kiri atas -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:src="@drawable/ic_tabi_logo"
+        android:contentDescription="@string/app_name" />
+
+    <!-- Label dan kolom input untuk English dan Indonesian -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:layout_marginTop="16dp"
+        android:weightSum="2">
+
+        <!-- Input English -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="English"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@android:drawable/edit_text"
+                android:padding="8dp">
+
+                <EditText
+                    android:id="@+id/inputEnglish"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Enter text"
+                    android:gravity="top|start"
+                    android:paddingEnd="40dp"
+                    android:background="@null" />
+
+                <ImageView
+                    android:id="@+id/micIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_mic"
+                    android:contentDescription="Microphone icon"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="8dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- Input Indonesian -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indonesian"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@android:drawable/edit_text"
+                android:padding="8dp">
+
+                <EditText
+                    android:id="@+id/inputIndonesian"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Result"
+                    android:gravity="top|start"
+                    android:paddingEnd="40dp"
+                    android:background="@null" />
+
+                <ImageView
+                    android:id="@+id/speakerIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_speaker"
+                    android:contentDescription="Speaker icon"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="8dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Teks "Where are you at?" -->
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Where are you at?"
+        android:textSize="18sp"
+        android:padding="4dp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- RecyclerView untuk CardView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clipToPadding="false" />
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/biru_bg">
+
+    <!-- Wrapper for Centering Content -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true">
+
+        <!-- Logo Image -->
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="305dp"
+            android:layout_height="136dp"
+            android:src="@drawable/ic_tabi_logo"
+            android:contentDescription="@string/app_name" />
+
+        <!-- Welcome Text -->
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Welcome to Tabi!"
+            android:textColor="#000080"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Subtitle Text -->
+        <TextView
+            android:id="@+id/subtitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bringing Indonesia's languages\nand culture closer to you."
+            android:textSize="16sp"
+            android:textColor="#555555"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+</RelativeLayout>
