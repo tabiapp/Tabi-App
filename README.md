@@ -8,10 +8,9 @@ Tabi is a mobile application designed to help travelers understand the culture, 
 - **Local Cuisine**: Recommends traditional dishes from various cities in Indonesia.
 - **Tourist Destinations**: Details popular attractions in major cities like Jakarta, Yogyakarta, Surabaya, and more.
 
-## Screenshots
+## App Preview
 ### Welcome Page
 The Welcome Page is the first screen users see when they open the app. It introduces the purpose and functionality of the app in a friendly and engaging way.
-![Welcome Screen](path/to/welcome_screen_image.png)
 
 ### Home Page
 The home page acts as a central menu where users can easily choose what they want to explore. It provides quick access to the app’s key functionalities:
