@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tabiku.R
 import com.example.tabiku.repository.CityRepository
-import com.example.tabiku.model.Food
 import com.example.tabiku.ui.adapters.FoodsAdapter
+import com.example.tabiku.model.Food
 
 class FoodsFragment : Fragment() {
     private lateinit var recyclerViewFoods: RecyclerView
@@ -23,25 +23,11 @@ class FoodsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_foods, container, false)
-
-        // Initialize RecyclerView and adapter
         recyclerViewFoods = view.findViewById(R.id.rvFoods)
         recyclerViewFoods.layoutManager = LinearLayoutManager(context)
 
-        foodsAdapter = FoodsAdapter(ArrayList()) // Initialize with empty list
-        recyclerViewFoods.adapter = foodsAdapter
-
-        // Set the item click listener for the adapter
-        foodsAdapter.setOnItemClickCallback(object : FoodsAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: Food) {
-                // Handle the food item click event (you can navigate to another screen or show a toast)
-                Log.d("FoodItem", "Clicked: ${data.name}")
-            }
-        })
-
         cityRepository = CityRepository()
 
-        // Get region name from arguments and fetch foods
         val regionName = arguments?.getString("region_name")
         regionName?.let { fetchFoods(it) }
 
@@ -51,12 +37,13 @@ class FoodsFragment : Fragment() {
     private fun fetchFoods(regionName: String) {
         cityRepository.getFoods(regionName) { foodResponse ->
             if (foodResponse?.message != null && foodResponse.message.isNotEmpty()) {
-                // Update the data in the adapter
-                foodsAdapter.updateData(foodResponse.message)
+                foodsAdapter = FoodsAdapter(foodResponse.message)
+                recyclerViewFoods.adapter = foodsAdapter
                 Log.d("API Response", "Foods loaded: ${foodResponse.message.size} items")
             } else {
                 Log.e("API Response", "Cannot load foods.")
             }
         }
     }
+
 }

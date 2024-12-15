@@ -35,9 +35,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="English"
+                android:text="@string/english_lang"
                 android:textSize="14sp"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:layout_gravity="center"
+                android:textAppearance="@style/TitleFont"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -49,7 +51,7 @@
                     android:id="@+id/inputEnglish"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="Enter text"
+                    android:hint="@string/input_text_placeholder"
                     android:gravity="top|start"
                     android:paddingEnd="40dp"
                     android:background="@null" />
@@ -59,7 +61,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_mic"
-                    android:contentDescription="Microphone icon"
+                    android:contentDescription="@string/microphone_icon_desc"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="8dp" />
@@ -77,9 +79,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Indonesian"
+                android:text="@string/indonesian_lang"
                 android:textSize="14sp"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:layout_gravity="center"
+                android:textAppearance="@style/TitleFont"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -91,7 +95,7 @@
                     android:id="@+id/inputIndonesian"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="Result"
+                    android:hint="@string/result_placeholder"
                     android:gravity="top|start"
                     android:paddingEnd="40dp"
                     android:background="@null" />
@@ -101,7 +105,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_speaker"
-                    android:contentDescription="Speaker icon"
+                    android:contentDescription="@string/speaker_icon_desc"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="8dp" />
@@ -114,12 +118,12 @@
         android:id="@+id/questionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Where are you at?"
+        android:text="@string/where_are_you_at_section"
         android:textSize="18sp"
         android:padding="4dp"
         android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp" />
+        android:textAppearance="@style/TitleFont"
+        android:layout_marginTop="16dp" />
 
     <!-- RecyclerView untuk CardView -->
     <androidx.recyclerview.widget.RecyclerView

@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/navigation_city"
         android:name="com.example.tabiku.ui.fragments.CityFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_city"
         tools:layout="@layout/fragment_city" />
 
 </navigation>

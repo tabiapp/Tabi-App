@@ -41,16 +41,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Local Culture Guide Etiquette Guide"
+                android:text="@string/local_cultural_etiquette_guide"
                 android:textStyle="bold"
+                android:textAppearance="@style/TitleFont"
                 android:textSize="18sp"
                 android:layout_marginBottom="8dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Being polite in the country you're visiting isn't just about the language. Explore the cultural nuances that matter."
+                android:text="@string/being_polite_in_the_country"
                 android:textSize="14sp"
+                android:textAppearance="@style/ContentFont"
                 android:lineSpacingExtra="4dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -78,7 +80,7 @@
                 android:id="@+id/search_edit_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="Search a city"
+                android:hint="@string/search"
                 android:background="@android:color/transparent"
                 android:inputType="text"
                 android:paddingStart="8dp"
@@ -109,10 +111,12 @@
         android:id="@+id/section_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="City You May Visit"
+        android:text="@string/city_you_may_visit_section"
         android:textStyle="bold"
         android:textSize="16sp"
+        android:textAppearance="@style/TitleFont"
         android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="-4dp"
         app:layout_constraintTop_toBottomOf="@id/card_search"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="24dp" />

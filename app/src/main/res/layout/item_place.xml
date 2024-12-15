@@ -20,15 +20,17 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="16dp"
-            android:contentDescription="Place Image"
+            android:contentDescription="@string/place_image"
             android:src="@drawable/ic_place_placeholder"/>
 
         <TextView
             android:id="@+id/placeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Place Name"
+            android:text="@string/place_name"
             android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAppearance="@style/ContentFont"
             android:textColor="@android:color/black"
             android:layout_gravity="center_vertical"/>
     </LinearLayout>

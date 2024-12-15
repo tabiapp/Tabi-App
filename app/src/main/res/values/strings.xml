@@ -1,16 +1,30 @@
 <resources>
     <string name="app_name">Tabi</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="title_city">Search City</string>
-
-    <string name="tab_text_1">Home</string>
-    <string name="tab_text_2">Profile</string>
-    <string name="tab_text_3">Setting</string>
     <string name="content_tab_manner">Manners</string>
     <string name="content_tab_food">Foods</string>
     <string name="content_tab_place">Places</string>
-    <string name="content_tab_text">This is Tab %1$d</string>
-    <string name="search">Search city</string>
+    <string name="search">Search a city</string>
+    <string name="city_you_may_visit_section">City You May Visit</string>
+    <string name="local_cultural_etiquette_guide">Local cultural etiquette guide</string>
+    <string name="being_polite_in_the_country">Being polite in the country you\'re visiting isn\'t just about the language, it\'s also about understanding everyday costums. Here, you\'ll find quick tips that can help you interact in a way that respects the local culture.</string>
+    <string name="english_lang">English</string>
+    <string name="input_text_placeholder">Enter text</string>
+    <string name="indonesian_lang">Indonesian</string>
+    <string name="result_placeholder">Result</string>
+    <string name="where_are_you_at_section">Where are you at?</string>
+    <string name="speaker_icon_desc">Speaker icon</string>
+    <string name="microphone_icon_desc">Microphone icon</string>
+    <string name="place_image">Place Image</string>
+    <string name="place_name">Place Name</string>
+    <string name="city_name">City Name</string>
+    <string name="food_image">Food Image</string>
+    <string name="food_name">Food Name</string>
+    <string name="transportation_etiquette">Transportation Etiquette:</string>
+    <string name="social_interactions">Social Interactions:</string>
+    <string name="visiting_home">Visiting Home:</string>
+    <string name="shopping_bargaining">Shopping Bargaining:</string>
+    <string name="splash_subtitle">Bringing Indonesia\'s languages\nand culture closer to you.</string>
+    <string name="splash_title">Welcome to Tabi!</string>
 </resources>

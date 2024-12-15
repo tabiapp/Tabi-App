@@ -17,8 +17,9 @@
             android:id="@+id/transport_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Transportation Etiquette:"
+            android:text="@string/transportation_etiquette"
             android:textStyle="bold"
+            android:textAppearance="@style/ContentFont"
             android:textSize="14sp" />
 
         <TextView
@@ -33,8 +34,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Social Interactions:"
+            android:text="@string/social_interactions"
             android:textStyle="bold"
+            android:textAppearance="@style/ContentFont"
             android:textSize="14sp" />
 
         <TextView
@@ -49,8 +51,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Visiting Home:"
+            android:text="@string/visiting_home"
             android:textStyle="bold"
+            android:textAppearance="@style/ContentFont"
             android:textSize="14sp" />
 
         <TextView
@@ -65,8 +68,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Shopping Bargaining:"
+            android:text="@string/shopping_bargaining"
             android:textStyle="bold"
+            android:textAppearance="@style/ContentFont"
             android:textSize="14sp" />
 
         <TextView

@@ -19,5 +19,20 @@
         <item name="itemTextColor">@color/white</item>
         <item name="backgroundTint">@color/soft_blue</item>
     </style>
+    <style name="Theme.StatusBar" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/soft_blue</item>
+    </style>
+    <style name="Theme.StatusBar2" parent="Theme.Design.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/soft_blue</item>
+    </style>
 
+    <style name="TitleFont">
+        <item name="android:typeface">sans</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="ContentFont">
+        <item name="android:typeface">sans</item>
+        <item name="android:fontFamily">@font/nunito_regular</item>
+    </style>
 </resources>
