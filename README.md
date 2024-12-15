@@ -11,8 +11,6 @@ Tabi is a mobile application designed to help travelers understand the culture, 
 ## App Preview
 ### Welcome Page
 The Welcome Page is the first screen users see when they open the app. It introduces the purpose and functionality of the app in a friendly and engaging way.
-<img src="![welcome_screen](https://github.com/user-attachments/assets/dace5b6d-6b3d-4685-9a60-ba53b1064e31)
-">
 
 ### Home Page
 The home page acts as a central menu where users can easily choose what they want to explore. It provides quick access to the app’s key functionalities:
